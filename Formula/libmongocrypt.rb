@@ -16,6 +16,7 @@ class Libmongocrypt < Formula
     else
       "-DBUILD_VERSION=1.0.4"
     end
+    cmake_args << "-DCMAKE_C_FLAGS='-fPIC'"
     system "cmake", ".", *cmake_args
     system "make", "install"
   end
